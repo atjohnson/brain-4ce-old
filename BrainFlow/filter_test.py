@@ -14,8 +14,9 @@ from brainflow.data_filter import DataFilter, FilterTypes, AggOperations, NoiseT
 def main():
     BoardShim.enable_dev_board_logger()
 
-    # use synthetic board for demo
+    # use synthetic board for democd
     params = BrainFlowInputParams()
+    # synthetic board
     board_id = BoardIds.SYNTHETIC_BOARD.value
     board = BoardShim(board_id, params)
     board.prepare_session()

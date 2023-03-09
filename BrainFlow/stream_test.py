@@ -49,7 +49,7 @@ class Graph:
             self.curves.append(curve)
 
     def update(self):
-        data = self.board_shim.get_current_board_data(self.num_points)
+        data = self.board_shim.get_current_board_data(self.num_points) #THIS is the data i believe
         for count, channel in enumerate(self.exg_channels):
             # plot timeseries
             DataFilter.detrend(data[channel], DetrendOperations.CONSTANT.value)
@@ -101,9 +101,9 @@ def main():
     params.master_board = args.master_board
 
     try:
-        board_shim = BoardShim(args.board_id, params)
-        board_shim.prepare_session()
-        board_shim.start_stream(450000, args.streamer_params)
+        board_shim = BoardShim(args.board_id, params) #initiate board with params and ID
+        board_shim.prepare_session() #need this to prepare streaming session
+        board_shim.start_stream(450000, args.streamer_params) #begins data stream stores data in ringbuffer, first  arg is buffer size 
         Graph(board_shim)
     except BaseException:
         logging.warning('Exception', exc_info=True)
@@ -111,7 +111,12 @@ def main():
         logging.info('End')
         if board_shim.is_prepared():
             logging.info('Releasing session')
-            board_shim.release_session()
+            board_shim.release_session() #end session 
+            #board_shim.stop_stream() to stop streaming
+            #get_current_board_data() - returns array of latest data stored in ringbuffer, does not clear ring buffer.
+            #get_board_data(int count) - gets num of elements in ring buffer
+            #insert_marker() - inserts marker to data stream
+            #get_board_data() gets all data and removes from ringbuffer
 
 
 if __name__ == '__main__':

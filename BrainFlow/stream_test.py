@@ -112,11 +112,7 @@ def main():
         if board_shim.is_prepared():
             logging.info('Releasing session')
             board_shim.release_session() #end session 
-            #board_shim.stop_stream() to stop streaming
-            #get_current_board_data() - returns array of latest data stored in ringbuffer, does not clear ring buffer.
-            #get_board_data(int count) - gets num of elements in ring buffer
-            #insert_marker() - inserts marker to data stream
-            #get_board_data() gets all data and removes from ringbuffer
+        
 
 
 if __name__ == '__main__':

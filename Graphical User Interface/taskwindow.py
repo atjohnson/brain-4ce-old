@@ -38,3 +38,9 @@ def tWindow():
 
     canvas.scale("all", 0, 0, 2, 2)
     canvas.place(relx=0.45, rely=0.05, anchor='n')
+    canvas.create_text(100, 100, text="1", fill="black", font=('Helvetica 25 bold'))
+    canvas.create_text(250, 100, text="2", fill="black", font=('Helvetica 25 bold'))   
+    canvas.create_text(400, 100, text="3", fill="black", font=('Helvetica 25 bold'))
+    canvas.create_text(100, 250, text="4", fill="black", font=('Helvetica 25 bold'))
+    canvas.create_text(250, 250, text="5", fill="black", font=('Helvetica 25 bold'))
+    canvas.create_text(400, 250, text="6", fill="black", font=('Helvetica 25 bold'))        

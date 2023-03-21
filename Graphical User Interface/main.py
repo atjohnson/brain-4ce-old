@@ -5,8 +5,8 @@ import savewindow
 def StartImagery():
     window.destroy()
     print("bImg selected")
-    #taskwindow.tWindow()
-    savewindow.savedata()
+    taskwindow.tWindow()
+    #savewindow.savedata()
 
 def StartReal():
     window.destroy()

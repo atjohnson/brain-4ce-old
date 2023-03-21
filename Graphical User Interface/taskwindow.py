@@ -1,12 +1,6 @@
 import tkinter as tk
 
 
-def CreateShape(canvas, x1,x2,y1,y2):
-
-    canvas.create_oval(x1,x2,y1,y2, outline='black', width=2)
-
-
-
 def tWindow():
 
     window = tk.Tk()
@@ -23,18 +17,15 @@ def tWindow():
 
     window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_pos, y_pos))
 
-
-
-
     canvas = tk.Canvas(window, width=450, height=450)
     canvas.pack()
 
-    CreateShape(canvas, 25, 25, 75, 75)
-    CreateShape(canvas, 100, 25, 150, 75)
-    CreateShape(canvas, 175, 25, 225, 75)
-    CreateShape(canvas, 25, 100, 75, 150)
-    CreateShape(canvas, 100, 100, 150, 150)
-    CreateShape(canvas, 175, 100, 225, 150)
+    canvas.create_oval(25, 25, 75, 75, outline='black', width=2)
+    canvas.create_oval(100, 25, 150, 75, outline='black', width=2)
+    canvas.create_oval(175, 25, 225, 75, outline='black', width=2)
+    canvas.create_oval(25, 100, 75, 150, outline='black', width=2)
+    canvas.create_oval(100, 100, 150, 150, outline='black', width=2)
+    canvas.create_oval(175, 100, 225, 150, outline='black', width=2)
 
     canvas.scale("all", 0, 0, 2, 2)
     canvas.place(relx=0.45, rely=0.05, anchor='n')

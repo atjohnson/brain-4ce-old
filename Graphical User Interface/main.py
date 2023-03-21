@@ -1,10 +1,12 @@
 import tkinter as tk
 import taskwindow
+import savewindow
 
 def StartImagery():
     window.destroy()
     print("bImg selected")
-    taskwindow.tWindow()
+    #taskwindow.tWindow()
+    savewindow.savedata()
 
 def StartReal():
     window.destroy()

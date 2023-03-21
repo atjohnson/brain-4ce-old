@@ -1,11 +1,15 @@
 import tkinter as tk
-
+import taskwindow
 
 def StartImagery():
+    window.destroy()
     print("bImg selected")
+    taskwindow.tWindow()
 
 def StartReal():
+    window.destroy()
     print("real selected")
+    taskwindow.tWindow()
 
 
 window = tk.Tk()
@@ -30,13 +34,13 @@ dUsers = tk.OptionMenu(window, variable, *users)
 dUsers.configure(background="white", activebackground="white")
 dUsers["menu"].configure(bg="white")
 #dUsers.pack()
-dUsers.place(relx=0.5, rely=0.05, anchor='n')
+dUsers.place(relx=0.5, rely=0.1, anchor='n')
 
 bStartImg = tk.Button(window, text="Start Imagery", command=StartImagery)
-bStartImg.place(relx=0.4, rely=0.5, anchor="se")
+bStartImg.place(relx=0.5, rely=0.6, anchor="se")
 
 bStartReal = tk.Button(window, text="Start Real", command=StartReal)
-bStartReal.place(relx=0.8, rely=0.5, anchor = "se")
+bStartReal.place(relx=0.8, rely=0.6, anchor = "se")
 
 
 
